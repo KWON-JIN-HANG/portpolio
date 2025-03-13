@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #4F46E5;
+  --secondary-color: #818CF8;
+  --background-color: #F3F4F6;
+  --card-background: #FFFFFF;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #818CF8;
+    --secondary-color: #4F46E5;
+    --background-color: #1F2937;
+    --card-background: #111827;
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+@layer components {
+  .mobile-frame {
+    @apply max-w-md mx-auto h-[calc(100vh-4rem)] bg-white dark:bg-gray-900 rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-gray-800 relative;
+  }
+
+  .section-title {
+    @apply text-xl font-bold mb-6 text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-100 dark:border-indigo-900 pb-2;
+  }
+
+  .profile-image {
+    @apply w-32 h-32 rounded-full border-4 border-indigo-500 shadow-lg overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-500;
+  }
+
+  .skill-tag {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105;
+  }
+
+  .contact-input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300;
+  }
+
+  .mobile-status-bar {
+    @apply bg-gray-900 text-white py-2 px-6 flex justify-between items-center text-sm;
+  }
+
+  .progress-bar {
+    @apply h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+  }
+
+  .progress-value {
+    @apply h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-500;
+  }
+}
